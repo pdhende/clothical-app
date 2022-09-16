@@ -1,4 +1,14 @@
-const User = require('./User');
+const dbConfig = require('../config/connection');
+const Sequelize = require('sequelize');
 
+const sequelize = new Sequelize(dbConfig.DATABASE, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.DIALECT
+});
 
-module.exports = { User};
+const db = {};
+db.sequelize = sequelize;
+db.models = {};
+db.models.User = require('./user')(sequelize, Sequelize.DataTypes);
+
+module.exports = db;
