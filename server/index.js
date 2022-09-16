@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // app.use('/api', apiRoutes);
 // app.use('/', htmlRoutes);
 
-// *******************Do we need to add an IFE?
+// *******************Do we need the below?
 // (async () => {
 //   await db.sequelize.sync();
 // })();
