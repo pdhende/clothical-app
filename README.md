@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# Clothical
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+[Link to deployed application](#TBD)
 
-In the project directory, you can run:
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/97912154/191071199-5ade446d-0274-46ab-912b-f0ba7cfdb557.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Table of contents
+=================
 
-### `npm test`
+   * [User Story](#user-story)
+   * [Visuals](#visuals)
+   * [Demo](#demo)
+   * [Installation Guidelines](#installation-guidelines)
+   * [Technologies](#technologies)
+   * [Libraries](libraries)
+   * [Contributors](#contributors)
+   * [Acknowledgements](#acknowledgements)
+   * [License](#license)
+  
+    
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User Story
+=================
+1. A User can register to access more functionality of the website:
+    - Once logged in, a user is taken to the homepage. Homepage header will show unhidden profile & shopping cart icons.
+    - Clicking on the profile icon, the user is transported to user profile page, where the user can review order history, and favorites.
+    - Clicking on the shopping cart icon, the user is transported to the shopping cart page, where the user can review the current items in the shopping cart, or alternatively check-out and purchase the items.
+2. A User will be able to search for Products based on category (Men, Women, Kids), color, price
+(All Products must have a name, description, image and purchase price)
+    - A User will see products matching their search
+3. When a User selects a product 
+    - Navigate to product description page - they can add it to the shopping cart, update qty
+    - Add it to their favorites 
+4. A User must be able to make a purchase using Stripe
+    - As a customer I’m able to add a product or products to my cart
+    - As a customer I’m able to  update the quantity of a product in my cart
+    - As a customer I’m able to see a summary of the amount I need to pay during checkout
+    - As a customer I am able to pay/checkout with the products in my cart.
+5. A User will receive order confirmation after making a purchase 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Visuals
+=================
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Miro Board:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://user-images.githubusercontent.com/97912154/191072105-b7f29d49-d6a9-458e-b7e9-900392f6984e.png)
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/97912154/191072379-17a2f5bb-6683-405b-9f01-be94187fcff0.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Demo
+=================
+To be added at a later date
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Installation Guidelines
+=================
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To enjoy this application, you will need to install Node JS on your local computer. [Click here for links to download Node JS.](https://nodejs.org/en/download/)
 
-## Learn More
+Then, clone this repository to your local computer, and open up the folder in your coding software (i.e. Visual Studio Code). Once open, open up your Terminal (on Mac OS) or GitBash (on Windows OS). You will have to direct yourself to the cloned repository, and then run this command in the terminal: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This will download the node modules MySQL2, Express, Nodemon, Sequelize, and DOTENV that this application needs to run on your local computer. After install, you will run the following command to open a MySQL shell in your terminal: 
 
-### Code Splitting
+`mysql -u root` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Then you will install the schema.sql file so MySQL can format your database. The semi-colon is necessary.
 
-### Analyzing the Bundle Size
+`SOURCE db/schema.sql;`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can exit the shell by entering:
 
-### Making a Progressive Web App
+`exit`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you would like to use dummy information on deployment, run:
 
-### Advanced Configuration
+`npm run seed`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To initiate the server, run:
 
-### Deployment
+`nodemon`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+If the last message in the terminal says "App listening on port (#)!", then you have installed the program correctly. If you ever need to shut down this server application use this command:
 
-### `npm run build` fails to minify
+`^C`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies
+=================
+
+* Node JS
+* MySQL2
+* Sequelize
+* Express
+* Dotenv
+
+
+Libraries
+================= 
+TBD
+
+
+Contributors
+=================
+1. James Compagnoni (Coding)
+2. June Lin (Digital Marketing)
+3. Izabella Torres (UXUI)
+4. Priyanka Dhende (Coding)
+5. Rocio Galvan (Coding)
+6. Tracy Suares (UXUI) 
+7. Yui Suematsu (Digital Marketing)
+
+Acknowledgements
+=================
+Thank you to our mentor, Christian Castanares, for the support and guidance throughout the development of the app
+
+ License
+=================
+
+[MIT](./LICENSE)
